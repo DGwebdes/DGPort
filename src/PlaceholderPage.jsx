@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useForm } from "@formspree/react";
+import { FaGithub, FaLinkedin, FaXTwitter, FaRss } from "react-icons/fa6";
 
 function MyForm() {
     const [state, handleSubmit] = useForm("mnnjeedo");
@@ -57,6 +58,50 @@ function MyForm() {
     );
 }
 
+function SocialBanner() {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="flex gap-6 mt-10 text-white text-xl"
+        >
+            <a
+                href="https://github.com/DGwebdes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-400"
+            >
+                <FaGithub />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/alangarve/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-400"
+            >
+                <FaLinkedin />
+            </a>
+            <a
+                href="https://x.com/gandalfsneto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-400"
+            >
+                <FaXTwitter />
+            </a>
+            <a
+                href="https://dgvault.pt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-400"
+            >
+                <FaRss />
+            </a>
+        </motion.div>
+    );
+}
+
 export default function PlaceholderPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col items-center justify-center p-4">
@@ -73,6 +118,7 @@ export default function PlaceholderPage() {
                 </p>
             </motion.div>
             <MyForm />
+            <SocialBanner />
         </div>
     );
 }
